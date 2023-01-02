@@ -4,6 +4,7 @@ import 'package:stat_management/provider/count_provider.dart';
 import 'package:stat_management/provider/example_one_provider.dart';
 import 'package:stat_management/screen/count_screen.dart';
 import 'package:stat_management/screen/example_one.dart';
+import 'package:stat_management/screen/favourite_screen.dart';
 import 'package:stat_management/state.dart';
 
 void main() {
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       ChangeNotifierProvider(create: (_) => ExampleOneProvider())
  ,   ],
 child:  MaterialApp(
-  home: ExampleOneScreen()
+  home: FavouriteScreen()
 ),
     );
   }
