@@ -1,36 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stat_management/screen/myFavourite_screen.dart';
 
 import '../provider/favourite_provider.dart';
 
-class FavouriteScreen extends StatefulWidget {
-  const FavouriteScreen({Key? key}) : super(key: key);
+class MyFavouriteScreen extends StatefulWidget {
+  const MyFavouriteScreen({Key? key}) : super(key: key);
 
   @override
-  State<FavouriteScreen> createState() => _FavouriteScreenState();
+  State<MyFavouriteScreen> createState() => _MyFavouriteScreenState();
 }
 
-class _FavouriteScreenState extends State<FavouriteScreen> {
-  List<int> selecteditem = [];
+class _MyFavouriteScreenState extends State<MyFavouriteScreen> {
+
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+   final favouriteProvider = Provider.of<FavouriteItemProvider>(context);
+    return Scaffold(
         appBar: AppBar(
           title: Text("Favourite App"),
-          actions: [
-            InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyFavouriteScreen()));
-   },child: Icon(Icons.favorite)),
-                
-            SizedBox(width: 20,)
-          ],
+          // actions: [
+          //   InkWell(
+          //       onTap: () {
+          //         Navigator.push(context, MaterialPageRoute(builder: (context) => MyFavouriteScreen()));
+          //       },child: Icon(Icons.favorite)),
+          //
+          //   SizedBox(width: 20,)
+          // ],
         ),
         body: Column(
           children: [
             Expanded(
-              child: ListView.builder(itemCount:10,itemBuilder: (context, index) {
+              child: ListView.builder(itemCount:favouriteProvider.selectedItem.length,itemBuilder: (context,
+                  index) {
                 return Consumer<FavouriteItemProvider>(builder: (context,value,child){
                   return  ListTile(
                     onTap: (){
@@ -52,4 +53,6 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
           ],
         ));
   }
+
 }
+
