@@ -20,7 +20,7 @@ class _CountState extends State<Count> {
         onPressed:(){
           countProvider.setCount();
         } ,
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.scale),
 
       ),
     );
