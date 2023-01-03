@@ -8,6 +8,7 @@ import 'package:stat_management/screen/count_screen.dart';
 import 'package:stat_management/screen/dark_theme.dart';
 import 'package:stat_management/screen/example_one.dart';
 import 'package:stat_management/screen/favourite_screen.dart';
+import 'package:stat_management/screen/value_notifier_listener.dart';
 import 'package:stat_management/state.dart';
 
 void main() {
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: AppBarTheme(
                 backgroundColor: Colors.teal
               )),
-              home: DarkThemeScreen());
+              home: NotifyListenerScreen());
         }));
   }
 }
